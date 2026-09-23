@@ -47,6 +47,7 @@ from liger_kernel.ops.backends._ascend.ops.group_norm import group_norm_forward
 from liger_kernel.ops.backends._ascend.ops.grpo_loss import GrpoLossFunction
 from liger_kernel.ops.backends._ascend.ops.grpo_loss import grpo_loss_backward_triton
 from liger_kernel.ops.backends._ascend.ops.grpo_loss import grpo_loss_forward_triton
+from liger_kernel.ops.backends._ascend.ops.fused_linear_grpo import fused_linear_grpo_forward
 from liger_kernel.ops.backends._ascend.ops.jsd import LigerJSDFunction
 from liger_kernel.ops.backends._ascend.ops.jsd import jsd_backward
 from liger_kernel.ops.backends._ascend.ops.jsd import jsd_forward
@@ -139,6 +140,7 @@ __all__ = [
     "GrpoLossFunction",
     "grpo_loss_forward_triton",
     "grpo_loss_backward_triton",
+    "fused_linear_grpo_forward",
     "LigerFusedLinearJSDFunction",
     "fused_linear_jsd_forward",
     "fused_linear_jsd_backward",
