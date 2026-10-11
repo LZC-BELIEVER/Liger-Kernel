@@ -1,0 +1,9 @@
+environment: CANN 9.1.0; triton-ascend 3.2.2
+=== Ascend910B3 ===
+selective compile:PASS CompiledKernel
+forward compile:PASS CompiledKernel
+backward compile:PASS CompiledKernel
+=== Ascend910_9579 ===
+selective compile:PASS CompiledKernel
+forward compile:PASS CompiledKernel
+backward compile:PASS CompiledKernel

@@ -1,0 +1,44 @@
+diff --git a/src/liger_kernel/chunked_loss/functional.py b/src/liger_kernel/chunked_loss/functional.py
+index bbf7850..12fef09 100644
+--- a/src/liger_kernel/chunked_loss/functional.py
++++ b/src/liger_kernel/chunked_loss/functional.py
+@@ -49,7 +49,7 @@ def liger_fused_linear_grpo(
+     vespo_lambda_neg=2.0,
+     num_items_in_batch=None,
+ ):
+-    if _input.device.type == "npu":
++    if False:  # PRE-VARIANT(#1799): force the pre-optimization upstream generic fused-linear path
+         if use_ref_model and ref_per_token_logps is None and ref_input is None:
+             raise AssertionError("If use_ref_model is True, ref_per_token_logps or ref_input must be provided")
+         from liger_kernel.ops.backends._ascend.ops.fused_linear_grpo import fused_linear_grpo_forward
+@@ -112,7 +112,7 @@ def liger_fused_linear_grpo(
+         sapo_temperature_pos,
+         sapo_temperature_neg,
+         temperature,
+-        compiled,
++        False,  # PRE-VARIANT(#1799): eager, see pre_variant/README.md
+         use_ref_model,
+         chunk_size,
+         vllm_is_ratio,
+diff --git a/src/liger_kernel/chunked_loss/grpo_loss.py b/src/liger_kernel/chunked_loss/grpo_loss.py
+index 80c8127..55e587f 100644
+--- a/src/liger_kernel/chunked_loss/grpo_loss.py
++++ b/src/liger_kernel/chunked_loss/grpo_loss.py
+@@ -501,7 +501,7 @@ class LigerFusedLinearGRPOLoss(torch.nn.Module):
+         vllm_is_ratio=None,
+         num_items_in_batch=None,
+     ):
+-        if _input.device.type == "npu":
++        if False:  # PRE-VARIANT(#1799): force the pre-optimization upstream generic fused-linear path
+             if self.use_ref_model and ref_per_token_logps is None and ref_input is None:
+                 raise AssertionError("If use_ref_model is True, ref_per_token_logps or ref_input must be provided")
+             from liger_kernel.ops.backends._ascend.ops.fused_linear_grpo import fused_linear_grpo_forward
+@@ -564,7 +564,7 @@ class LigerFusedLinearGRPOLoss(torch.nn.Module):
+             self.sapo_temperature_pos,
+             self.sapo_temperature_neg,
+             self.temperature,
+-            self.compiled,
++            False,  # PRE-VARIANT(#1799): eager, see pre_variant/README.md
+             self.use_ref_model,
+             self.chunk_size,
+             vllm_is_ratio,
