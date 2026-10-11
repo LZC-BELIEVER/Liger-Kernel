@@ -1,0 +1,556 @@
+/workspace3/lcw/liger-kernel-ref/benchmark/scripts/benchmark_model_configs.py:282: UserWarning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (Triggered internally at build/CMakeFiles/torch_npu.dir/compiler_depend.ts:338.)
+  y.backward(torch.randn_like(y))
+Benchmarking GRPO (token-level importance sampling)...
+**************************************
+     BENCHMARKING SPEED for FUSED_LINEAR_GRPO_LOSS_TOKEN
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      9.282999992370605,
+      18.061939239501953,
+      35.59516143798828
+    ],
+    "y_values_20": [
+      9.282999992370605,
+      18.061939239501953,
+      35.59516143798828
+    ],
+    "y_values_80": [
+      9.282999992370605,
+      18.061939239501953,
+      35.59516143798828
+    ],
+    "timestamp": "2026-09-21 11:14:17",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      10.944720268249512,
+      21.224180221557617,
+      41.900901794433594
+    ],
+    "y_values_20": [
+      10.944720268249512,
+      21.224180221557617,
+      41.900901794433594
+    ],
+    "y_values_80": [
+      10.944720268249512,
+      21.224180221557617,
+      41.900901794433594
+    ],
+    "timestamp": "2026-09-21 11:14:37",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      15.588359832763672,
+      25.202999114990234,
+      44.4222412109375
+    ],
+    "y_values_20": [
+      15.588359832763672,
+      25.202999114990234,
+      44.4222412109375
+    ],
+    "y_values_80": [
+      15.588359832763672,
+      25.202999114990234,
+      44.4222412109375
+    ],
+    "timestamp": "2026-09-21 11:14:59",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      18.186019897460938,
+      28.77400016784668,
+      51.49237823486328
+    ],
+    "y_values_20": [
+      18.186019897460938,
+      28.77400016784668,
+      51.49237823486328
+    ],
+    "y_values_80": [
+      18.186019897460938,
+      28.77400016784668,
+      51.49237823486328
+    ],
+    "timestamp": "2026-09-21 11:15:18",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      24.814619064331055,
+      43.24135971069336,
+      79.94217681884766
+    ],
+    "y_values_20": [
+      24.814619064331055,
+      43.24135971069336,
+      79.94217681884766
+    ],
+    "y_values_80": [
+      24.814619064331055,
+      43.24135971069336,
+      79.94217681884766
+    ],
+    "timestamp": "2026-09-21 11:15:37",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      29.099239349365234,
+      49.986820220947266,
+      93.2745590209961
+    ],
+    "y_values_20": [
+      29.099239349365234,
+      49.986820220947266,
+      93.2745590209961
+    ],
+    "y_values_80": [
+      29.099239349365234,
+      49.986820220947266,
+      93.2745590209961
+    ],
+    "timestamp": "2026-09-21 11:15:57",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  }
+]
+**************************************
+     BENCHMARKING MEMORY for FUSED_LINEAR_GRPO_LOSS_TOKEN
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      5292.77490234375,
+      6130.04833984375,
+      8230.044921875
+    ],
+    "y_values_20": [
+      5292.77490234375,
+      6130.04833984375,
+      8230.044921875
+    ],
+    "y_values_80": [
+      5292.77490234375,
+      6130.04833984375,
+      8230.044921875
+    ],
+    "timestamp": "2026-09-21 11:16:15",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      5536.0380859375,
+      7087.52294921875,
+      11141.5546875
+    ],
+    "y_values_20": [
+      5536.0380859375,
+      7087.52294921875,
+      11141.5546875
+    ],
+    "y_values_80": [
+      5536.0380859375,
+      7087.52294921875,
+      11141.5546875
+    ],
+    "timestamp": "2026-09-21 11:16:34",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"token\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  }
+]
+Benchmarking GSPO (sequence-level importance sampling)...
+**************************************
+     BENCHMARKING SPEED for FUSED_LINEAR_GRPO_LOSS_SEQUENCE
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      9.879839897155762,
+      19.187360763549805,
+      37.81364059448242
+    ],
+    "y_values_20": [
+      9.879839897155762,
+      19.187360763549805,
+      37.81364059448242
+    ],
+    "y_values_80": [
+      9.879839897155762,
+      19.187360763549805,
+      37.81364059448242
+    ],
+    "timestamp": "2026-09-21 11:17:04",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      10.933059692382812,
+      21.213899612426758,
+      41.85335922241211
+    ],
+    "y_values_20": [
+      10.933059692382812,
+      21.213899612426758,
+      41.85335922241211
+    ],
+    "y_values_80": [
+      10.933059692382812,
+      21.213899612426758,
+      41.85335922241211
+    ],
+    "timestamp": "2026-09-21 11:17:23",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      15.593420028686523,
+      25.173120498657227,
+      44.440799713134766
+    ],
+    "y_values_20": [
+      15.593420028686523,
+      25.173120498657227,
+      44.440799713134766
+    ],
+    "y_values_80": [
+      15.593420028686523,
+      25.173120498657227,
+      44.440799713134766
+    ],
+    "timestamp": "2026-09-21 11:17:45",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      18.186420440673828,
+      28.78499984741211,
+      51.53416061401367
+    ],
+    "y_values_20": [
+      18.186420440673828,
+      28.78499984741211,
+      51.53416061401367
+    ],
+    "y_values_80": [
+      18.186420440673828,
+      28.78499984741211,
+      51.53416061401367
+    ],
+    "timestamp": "2026-09-21 11:18:04",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      25.470439910888672,
+      44.350738525390625,
+      82.22554016113281
+    ],
+    "y_values_20": [
+      25.470439910888672,
+      44.350738525390625,
+      82.22554016113281
+    ],
+    "y_values_80": [
+      25.470439910888672,
+      44.350738525390625,
+      82.22554016113281
+    ],
+    "timestamp": "2026-09-21 11:18:24",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      29.096820831298828,
+      50.02445983886719,
+      93.17279815673828
+    ],
+    "y_values_20": [
+      29.096820831298828,
+      50.02445983886719,
+      93.17279815673828
+    ],
+    "y_values_80": [
+      29.096820831298828,
+      50.02445983886719,
+      93.17279815673828
+    ],
+    "timestamp": "2026-09-21 11:18:43",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  }
+]
+**************************************
+     BENCHMARKING MEMORY for FUSED_LINEAR_GRPO_LOSS_SEQUENCE
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      5292.77587890625,
+      6130.04931640625,
+      8230.046875
+    ],
+    "y_values_20": [
+      5292.77587890625,
+      6130.04931640625,
+      8230.046875
+    ],
+    "y_values_80": [
+      5292.77587890625,
+      6130.04931640625,
+      8230.046875
+    ],
+    "timestamp": "2026-09-21 11:19:02",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "B",
+    "x_label": "batch size",
+    "x_values": [
+      1,
+      2,
+      4
+    ],
+    "y_values_50": [
+      5536.02685546875,
+      7087.52294921875,
+      11141.5546875
+    ],
+    "y_values_20": [
+      5536.02685546875,
+      7087.52294921875,
+      11141.5546875
+    ],
+    "y_values_80": [
+      5536.02685546875,
+      7087.52294921875,
+      11141.5546875
+    ],
+    "timestamp": "2026-09-21 11:19:20",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"hidden_size\": 4096, \"vocab_size\": 128256, \"dtype\": \"torch.bfloat16\", \"T\": 1024, \"importance_sampling_level\": \"sequence\", \"bsz\": 1, \"seq_len\": 4096}",
+    "liger_version": "0.8.2"
+  }
+]

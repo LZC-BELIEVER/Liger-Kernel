@@ -1,0 +1,32 @@
+[INFO] Start profiling....
+/workspace3/lcw/liger-kernel-ref/src/liger_kernel/ops/backends/_ascend/ops/grpo_loss.py:818: UserWarning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (Triggered internally at build/CMakeFiles/torch_npu.dir/compiler_depend.ts:338.)
+  lse = torch.zeros_like(loss)
+[profile_grpo_path] level=token B=4 T=1024 H=4096 V=128256 dtype=bfloat16 iters=2 loss=-0.018065 ms=[80.209, 80.163]
+[profile_grpo_path] level=sequence B=4 T=1024 H=4096 V=128256 dtype=bfloat16 iters=2 loss=0.538173 ms=[82.517, 82.476]
+[INFO] Start export data in PROF_000001_20261011131902494_02849883CQDRHHEI.
+Sun 11 Oct 2026 13:19:14 [INFO] [MSVP] [3086658] msprof_common.py: Start analyzing data in "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/host" ...
+Sun 11 Oct 2026 13:19:14 [INFO] [MSVP] [3086658] msprof_common.py: It may take few minutes, please be patient ...
+Sun 11 Oct 2026 13:19:14 [INFO] [MSVP] [3086658] msprof_common.py: Analysis data in "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/host" finished.
+Sun 11 Oct 2026 13:19:14 [INFO] [MSVP] [3086658] msprof_common.py: Start analyzing data in "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/device_2" ...
+Sun 11 Oct 2026 13:19:14 [INFO] [MSVP] [3086658] msprof_common.py: It may take few minutes, please be patient ...
+Sun 11 Oct 2026 13:19:14 [INFO] [MSVP] [3086658] msprof_common.py: Analysis data in "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/device_2" finished.
+Sun 11 Oct 2026 13:19:14 [INFO] [MSVP] [3086658] msprof_export.py: All collected data will be exported, path is: /workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/device_2.
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_export.py: The data in "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/host" has been analyzed. Parsing phase will be skipped.
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_export.py: The data in "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/device_2" has been analyzed. Parsing phase will be skipped.
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_export.py: All collected data will be exported, path is: /workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/device_2.
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_export.py: There is no summary data to export for "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/host"
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_export.py: All collected data will be exported, path is: /workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/device_2.
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_export.py: There is no summary data to export for "/workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/device_2"
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_common.py: Start exporting summary output_file.
+Sun 11 Oct 2026 13:19:15 [INFO] [MSVP] [3096295] msprof_common.py: End exporting summary output_file.The file is stored in the /workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI/mindstudio_profiler_output path.
+[INFO] Export all data in PROF_000001_20261011131902494_02849883CQDRHHEI done.
+[INFO] Start query data in PROF_000001_20261011131902494_02849883CQDRHHEI.
+Job Info	Device ID	Dir Name	Collection Time           	Model ID	Iteration Number	Top Time Iteration	Rank ID	
+
+NA      	         	host    	2026-10-11 13:19:02.709911	N/A     	N/A             	N/A               	-1     	
+
+NA      	2        	device_2	2026-10-11 13:19:02.715817	N/A     	N/A             	N/A               	-1     	
+
+[INFO] Query all data in PROF_000001_20261011131902494_02849883CQDRHHEI done.
+[INFO] Profiling finished.
+[INFO] Process profiling data complete. Data is saved in /workspace3/lcw/SLAI-Ascend-OpForge/docs/lzc/1799/evidence/20261011/msprof/raw_20261011_dev2/PROF_000001_20261011131902494_02849883CQDRHHEI

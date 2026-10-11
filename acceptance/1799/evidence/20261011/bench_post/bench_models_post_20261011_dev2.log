@@ -1,0 +1,812 @@
+/workspace3/lcw/liger-kernel-ref/benchmark/scripts/benchmark_model_configs.py:282: UserWarning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (Triggered internally at build/CMakeFiles/torch_npu.dir/compiler_depend.ts:338.)
+  y.backward(torch.randn_like(y))
+Benchmarking GRPO (token-level importance sampling)...
+**************************************
+     BENCHMARKING SPEED for FUSED_LINEAR_GRPO_LOSS_TOKEN
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      2.435879945755005,
+      9.29203987121582,
+      10.689200401306152,
+      14.243120193481445,
+      22.087400436401367,
+      4.631150245666504,
+      14.783439636230469
+    ],
+    "y_values_20": [
+      2.4249119758605957,
+      9.29203987121582,
+      10.689200401306152,
+      14.243120193481445,
+      22.087400436401367,
+      4.612003803253174,
+      14.783439636230469
+    ],
+    "y_values_80": [
+      2.438904047012329,
+      9.29203987121582,
+      10.689200401306152,
+      14.243120193481445,
+      22.087400436401367,
+      4.650296211242676,
+      14.783439636230469
+    ],
+    "timestamp": "2026-10-11 13:34:59",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      2.7258400917053223,
+      10.918219566345215,
+      12.960860252380371,
+      16.494800567626953,
+      24.484500885009766,
+      6.196080207824707,
+      16.44651985168457
+    ],
+    "y_values_20": [
+      2.7039880752563477,
+      10.918219566345215,
+      12.960860252380371,
+      16.494800567626953,
+      24.484500885009766,
+      6.196080207824707,
+      16.44651985168457
+    ],
+    "y_values_80": [
+      2.7345521450042725,
+      10.918219566345215,
+      12.960860252380371,
+      16.494800567626953,
+      24.484500885009766,
+      6.196080207824707,
+      16.44651985168457
+    ],
+    "timestamp": "2026-10-11 13:35:59",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      3.6173501014709473,
+      15.582839965820312,
+      17.147499084472656,
+      22.274120330810547,
+      35.16429901123047,
+      6.87470006942749,
+      26.416519165039062
+    ],
+    "y_values_20": [
+      3.616215944290161,
+      15.582839965820312,
+      17.147499084472656,
+      22.274120330810547,
+      35.16429901123047,
+      6.87470006942749,
+      26.416519165039062
+    ],
+    "y_values_80": [
+      3.6184840202331543,
+      15.582839965820312,
+      17.147499084472656,
+      22.274120330810547,
+      35.16429901123047,
+      6.87470006942749,
+      26.416519165039062
+    ],
+    "timestamp": "2026-10-11 13:37:13",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      4.115930080413818,
+      18.203800201416016,
+      20.401859283447266,
+      25.458499908447266,
+      38.492279052734375,
+      9.026040077209473,
+      28.982540130615234
+    ],
+    "y_values_20": [
+      4.113979816436768,
+      18.203800201416016,
+      20.401859283447266,
+      25.458499908447266,
+      38.492279052734375,
+      9.026040077209473,
+      28.982540130615234
+    ],
+    "y_values_80": [
+      4.117880344390869,
+      18.203800201416016,
+      20.401859283447266,
+      25.458499908447266,
+      38.492279052734375,
+      9.026040077209473,
+      28.982540130615234
+    ],
+    "timestamp": "2026-10-11 13:38:12",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      6.0096001625061035,
+      24.902740478515625,
+      27.822519302368164,
+      36.6038818359375,
+      57.34621810913086,
+      11.491419792175293,
+      41.04954147338867
+    ],
+    "y_values_20": [
+      6.0096001625061035,
+      24.902740478515625,
+      27.822519302368164,
+      36.6038818359375,
+      57.34621810913086,
+      11.491419792175293,
+      41.04954147338867
+    ],
+    "y_values_80": [
+      6.0096001625061035,
+      24.902740478515625,
+      27.822519302368164,
+      36.6038818359375,
+      57.34621810913086,
+      11.491419792175293,
+      41.04954147338867
+    ],
+    "timestamp": "2026-10-11 13:39:13",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      6.849800109863281,
+      29.048660278320312,
+      33.25941848754883,
+      41.95024108886719,
+      62.767601013183594,
+      15.194239616394043,
+      45.35245895385742
+    ],
+    "y_values_20": [
+      6.849800109863281,
+      29.048660278320312,
+      33.25941848754883,
+      41.95024108886719,
+      62.767601013183594,
+      15.194239616394043,
+      45.35245895385742
+    ],
+    "y_values_80": [
+      6.849800109863281,
+      29.048660278320312,
+      33.25941848754883,
+      41.95024108886719,
+      62.767601013183594,
+      15.194239616394043,
+      45.35245895385742
+    ],
+    "timestamp": "2026-10-11 13:40:13",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  }
+]
+**************************************
+     BENCHMARKING MEMORY for FUSED_LINEAR_GRPO_LOSS_TOKEN
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "liger",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      1344.595703125,
+      5292.779296875,
+      5523.82373046875,
+      7765.3232421875,
+      12241.32421875,
+      2380.42431640625,
+      9146.28125
+    ],
+    "y_values_20": [
+      1344.595703125,
+      5292.779296875,
+      5523.82373046875,
+      7765.3232421875,
+      12241.32421875,
+      2380.42431640625,
+      9146.28125
+    ],
+    "y_values_80": [
+      1344.595703125,
+      5292.779296875,
+      5523.82373046875,
+      7765.3232421875,
+      12241.32421875,
+      2380.42431640625,
+      9146.28125
+    ],
+    "timestamp": "2026-10-11 13:41:10",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_token",
+    "kernel_provider": "torch",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      1399.03857421875,
+      5535.03857421875,
+      5813.53759765625,
+      8052.037109375,
+      12522.0390625,
+      2830.3837890625,
+      9384.5390625
+    ],
+    "y_values_20": [
+      1399.03857421875,
+      5535.03857421875,
+      5813.53759765625,
+      8052.037109375,
+      12522.0390625,
+      2830.3837890625,
+      9384.5390625
+    ],
+    "y_values_80": [
+      1399.03857421875,
+      5535.03857421875,
+      5813.53759765625,
+      8052.037109375,
+      12522.0390625,
+      2830.3837890625,
+      9384.5390625
+    ],
+    "timestamp": "2026-10-11 13:42:09",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"token\"}",
+    "liger_version": "0.8.2"
+  }
+]
+Benchmarking GSPO (sequence-level importance sampling)...
+**************************************
+     BENCHMARKING SPEED for FUSED_LINEAR_GRPO_LOSS_SEQUENCE
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      2.5814599990844727,
+      9.893119812011719,
+      11.393400192260742,
+      14.908699989318848,
+      22.827800750732422,
+      5.149980068206787,
+      15.404379844665527
+    ],
+    "y_values_20": [
+      2.5783519744873047,
+      9.893119812011719,
+      11.393400192260742,
+      14.908699989318848,
+      22.827800750732422,
+      5.149980068206787,
+      15.404379844665527
+    ],
+    "y_values_80": [
+      2.597947835922241,
+      9.893119812011719,
+      11.393400192260742,
+      14.908699989318848,
+      22.827800750732422,
+      5.149980068206787,
+      15.404379844665527
+    ],
+    "timestamp": "2026-10-11 13:44:26",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      2.7012999057769775,
+      10.934860229492188,
+      12.970219612121582,
+      16.487960815429688,
+      24.405359268188477,
+      6.20713996887207,
+      16.48154067993164
+    ],
+    "y_values_20": [
+      2.692960023880005,
+      10.934860229492188,
+      12.970219612121582,
+      16.487960815429688,
+      24.405359268188477,
+      6.20713996887207,
+      16.48154067993164
+    ],
+    "y_values_80": [
+      2.7042040824890137,
+      10.934860229492188,
+      12.970219612121582,
+      16.487960815429688,
+      24.405359268188477,
+      6.20713996887207,
+      16.48154067993164
+    ],
+    "timestamp": "2026-10-11 13:45:24",
+    "kernel_operation_mode": "forward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      3.6215100288391113,
+      15.581299781799316,
+      17.165359497070312,
+      22.32986068725586,
+      35.11479949951172,
+      6.8937602043151855,
+      26.362260818481445
+    ],
+    "y_values_20": [
+      3.617004156112671,
+      15.581299781799316,
+      17.165359497070312,
+      22.32986068725586,
+      35.11479949951172,
+      6.8937602043151855,
+      26.362260818481445
+    ],
+    "y_values_80": [
+      3.6260159015655518,
+      15.581299781799316,
+      17.165359497070312,
+      22.32986068725586,
+      35.11479949951172,
+      6.8937602043151855,
+      26.362260818481445
+    ],
+    "timestamp": "2026-10-11 13:46:35",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      4.1350202560424805,
+      18.169740676879883,
+      20.380840301513672,
+      25.424299240112305,
+      38.41313934326172,
+      9.052359580993652,
+      28.99519920349121
+    ],
+    "y_values_20": [
+      4.132164001464844,
+      18.169740676879883,
+      20.380840301513672,
+      25.424299240112305,
+      38.41313934326172,
+      9.052359580993652,
+      28.99519920349121
+    ],
+    "y_values_80": [
+      4.137876033782959,
+      18.169740676879883,
+      20.380840301513672,
+      25.424299240112305,
+      38.41313934326172,
+      9.052359580993652,
+      28.99519920349121
+    ],
+    "timestamp": "2026-10-11 13:47:36",
+    "kernel_operation_mode": "backward",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      6.221920013427734,
+      25.40287971496582,
+      28.5262393951416,
+      37.252960205078125,
+      57.99443817138672,
+      11.997079849243164,
+      41.76414108276367
+    ],
+    "y_values_20": [
+      6.221920013427734,
+      25.40287971496582,
+      28.5262393951416,
+      37.252960205078125,
+      57.99443817138672,
+      11.997079849243164,
+      41.76414108276367
+    ],
+    "y_values_80": [
+      6.221920013427734,
+      25.40287971496582,
+      28.5262393951416,
+      37.252960205078125,
+      57.99443817138672,
+      11.997079849243164,
+      41.76414108276367
+    ],
+    "timestamp": "2026-10-11 13:48:38",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "speed",
+    "metric_unit": "ms",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      6.84552001953125,
+      29.11471939086914,
+      33.29627990722656,
+      41.94334030151367,
+      62.7871208190918,
+      15.304739952087402,
+      45.43156051635742
+    ],
+    "y_values_20": [
+      6.84552001953125,
+      29.11471939086914,
+      33.29627990722656,
+      41.94334030151367,
+      62.7871208190918,
+      15.304739952087402,
+      45.43156051635742
+    ],
+    "y_values_80": [
+      6.84552001953125,
+      29.11471939086914,
+      33.29627990722656,
+      41.94334030151367,
+      62.7871208190918,
+      15.304739952087402,
+      45.43156051635742
+    ],
+    "timestamp": "2026-10-11 13:49:40",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  }
+]
+**************************************
+     BENCHMARKING MEMORY for FUSED_LINEAR_GRPO_LOSS_SEQUENCE
+**************************************
+********** Benchmark Data **********
+[
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "liger",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      1344.5966796875,
+      5292.7802734375,
+      5523.82470703125,
+      7765.32421875,
+      12241.326171875,
+      2380.42529296875,
+      9146.2822265625
+    ],
+    "y_values_20": [
+      1344.5966796875,
+      5292.7802734375,
+      5523.82470703125,
+      7765.32421875,
+      12241.326171875,
+      2380.42529296875,
+      9146.2822265625
+    ],
+    "y_values_80": [
+      1344.5966796875,
+      5292.7802734375,
+      5523.82470703125,
+      7765.32421875,
+      12241.326171875,
+      2380.42529296875,
+      9146.2822265625
+    ],
+    "timestamp": "2026-10-11 13:50:41",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  },
+  {
+    "kernel_name": "fused_linear_grpo_loss_sequence",
+    "kernel_provider": "torch",
+    "metric_name": "memory",
+    "metric_unit": "MB",
+    "gpu_name": "Ascend910_9382",
+    "x_name": "model_config",
+    "x_label": "model configuration",
+    "x_values": [
+      "llama_2_7b",
+      "llama_3_8b",
+      "qwen2.5_7b",
+      "qwen2.5_14b",
+      "qwen2.5_72b",
+      "deepseek_v2_lite",
+      "deepseek_v3"
+    ],
+    "y_values_50": [
+      1399.02734375,
+      5535.02734375,
+      5813.5263671875,
+      8052.02587890625,
+      12522.02734375,
+      2830.3837890625,
+      9384.52734375
+    ],
+    "y_values_20": [
+      1399.02734375,
+      5535.02734375,
+      5813.5263671875,
+      8052.02587890625,
+      12522.02734375,
+      2830.3837890625,
+      9384.52734375
+    ],
+    "y_values_80": [
+      1399.02734375,
+      5535.02734375,
+      5813.5263671875,
+      8052.02587890625,
+      12522.02734375,
+      2830.3837890625,
+      9384.52734375
+    ],
+    "timestamp": "2026-10-11 13:51:39",
+    "kernel_operation_mode": "full",
+    "extra_benchmark_config_str": "{\"bsz\": 1, \"seq_len\": 2048, \"T\": 1024, \"importance_sampling_level\": \"sequence\"}",
+    "liger_version": "0.8.2"
+  }
+]

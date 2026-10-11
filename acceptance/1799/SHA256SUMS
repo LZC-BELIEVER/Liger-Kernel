@@ -1,0 +1,35 @@
+# Issue #1799 acceptance packet — evidence, tools and PRE variant.
+# Verify from this directory:  sha256sum -c SHA256SUMS
+# Entry format: <sha256>  <path relative to this file>.
+e04c1704426dfc8595f849b2ac84c3961ea8b32c77a375789df764df0b9719b0  evidence/20261011/pytest/pytest_full_20261011_dev2.log
+8db7d7266efbe8b803a45ecc80717060c593d598f71e30a6e9e2729678672560  evidence/20261011/bench_post/all_benchmark_data_1799_post_default_20261011_dev2.csv
+49aff4b5973c4487650e63717f60252f3efb4d757ce6ef5881d0e7e882831cfe  evidence/20261011/bench_post/bench_default_post_20261011_dev2.log
+9f2502c7904e4664f4adb39fbed4c6eecbedf5f2611df58afe65604f6d1c7c78  evidence/20261011/bench_post/all_benchmark_data_1799_post_models_20261011_dev2.csv
+269fd1ab4962ae2d971e48653801f417a056cc5871e72fd3f8a080ef9c93a645  evidence/20261011/bench_post/bench_models_post_20261011_dev2.log
+6ad6b0574405ecc80bf6e17fd9f69975ff8dcbf27713776ea2816e6f1b1326e1  evidence/20261011/bench_pre/all_benchmark_data_1799_pre_default_20261011_dev2.csv
+9bf0aede685888670b99bfe8bfb870270fb88372212729815337f4e2b906760a  evidence/20261011/bench_pre/bench_default_pre_20261011_dev2.log
+65af40d3b7db48b04b35db697841cd810d64d31a91835dc1aca4280141ce64b7  evidence/20261011/bench_pre/bench_default_pre_generic_compiled_true_FAILED_20261011_dev2.log
+d64cf1dc9ee9dee4d28b7ee36e790a079687b79e60d1cf37e92670b544387276  evidence/20261011/grad_smoke_post_bfloat16_20261011_dev2.log
+2a5f092bf82ac6c5e48188a7ac645df7c600715a116a81cb022533de8e960197  evidence/20261011/grad_smoke_post_float32_20261011_dev2.log
+faa253bbc2990a6afa960ba222305a218122beb1c1aca0711a6585c26ff31543  evidence/20261011/grad_smoke_pre_bfloat16_20261011_dev2.log
+9e2ca9622cfbd630f2c18706b2516083a08af526a942022ec3c10899ab5965ea  evidence/20261011/grad_smoke_pre_float32_20261011_dev2.log
+7eea5e0b46d2f7fbaf42c88998c468e132a7ba5e725dd59e8ff0f0f4e6dec7a7  evidence/20261011/table_default_post_vs_pre.csv
+f387319ab2dceff81cac6990818a8ba581430113dd92fd92cb8a7fb90da13fc1  evidence/20261011/table_default_post_vs_pre.md
+99f199f40429c390c5c5f3d7aa8a56b6c72cf9bcaaf9364618d119fd044d244c  evidence/20261011/table_models_post.md
+074ccb02b34889c94a585d78ba499cffed3d935e8aa7301629b632ffab0a13f3  evidence/20261011/table_models_post.csv
+96eab9c91b4292b6b3d36112c0bf01c4c65c6e4b7388c308a1df6cfa73f94ef8  evidence/20261011/msprof/msprof_collect_20261011_dev2.log
+8f0bc68b5d50659ae1331d5e9fdebfbd9309fa656790bd8f6d343f6477597282  evidence/20261011/msprof/msprof_op_summary_20261011_dev2.csv
+41a08fe08f06f963fb495cc0aa34dfed6c180718fc919933df0f774471726c15  evidence/20261011/msprof/msprof_op_summary_20261011_dev2.md
+11748ef32b8aac5151c36a49e0a7ceaa327df756c0e1e99844fcd21293059b96  pre_variant/pre_variant.diff
+e9cd038634c1fcb138ee5be7c63ad81401b9a9fcb4377501dfe8af6ca39fe0c7  tools/analyze_msprof.py
+8e96c7bb10cfe5c9db11cb21b5312e09023937a62f346125c32ffb4f0301ce0e  tools/grad_smoke.py
+28ad2b0a5c503b5533682e255c6d98547ab4f9dff8e3c69209027f6c37823849  tools/make_comparison_table.py
+#
+# Tree digests (informational; not checked by `sha256sum -c`, which only reads
+# file entries above).  Recipe: find <dir> -type f | sort | xargs sha256sum | sha256sum
+#   evidence/20261011/msprof/raw_20261011_dev2 : bc444aa3e2b150f98edfefeb6bda2b719b4e30ade558964b8eb36cb2e8f1ac59  (88 files, 2.7 MB)
+#   evidence/archive_20260921                  : 9f3078975a00f810bdb4af30c97aa1f9118dae29db8edd139959ca53b21a6dff  (7 files, previous round)
+#
+# The packet documents themselves (README / ACCEPTANCE_CHECKLIST / REPRODUCE /
+# PROFILING_AND_OPTIMIZATION / GAPS_AND_NEXT_STEPS / PR_BODY_DRAFT /
+# ACTIVE_STATUS) are the claim layer and are intentionally excluded.

@@ -1,0 +1,271 @@
+op0_op1: FusedSchedulerNode(SchedulerNode,SchedulerNode)
+op0_op1.writes = [MemoryDep('buf0', c0, {c0: 47}), MemoryDep('buf1', c0, {c0: 47})]
+op0_op1.unmet_dependencies = []
+op0_op1.met_dependencies = 
+    [   MemoryDep('clamp_min_1', 0, {}),
+        MemoryDep('primals_2', c0, {c0: 47}),
+        MemoryDep('primals_3', c0, {c0: 47}),
+        MemoryDep('primals_4', 0, {}),
+        MemoryDep('primals_5', c0, {c0: 47}),
+        MemoryDep('tangents_1', 0, {}),
+        MemoryDep('tangents_2', 0, {})]
+op0_op1.outputs = [
+    buf0: ComputedBuffer
+    buf0.layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+    buf0.users = [NodeUser(node=SchedulerNode(name='op1'), can_inplace=True, is_weak=False)]
+    buf1: ComputedBuffer
+    buf1.layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+    buf1.users = [NodeUser(node=OUTPUT, can_inplace=False, is_weak=False)]
+]
+op0_op1.snodes[0] =
+op0: SchedulerNode(ComputedBuffer)
+op0.writes = [MemoryDep('buf0', c0, {c0: 47})]
+op0.unmet_dependencies = []
+op0.met_dependencies = 
+    [   MemoryDep('clamp_min_1', 0, {}),
+        MemoryDep('primals_2', c0, {c0: 47}),
+        MemoryDep('primals_4', 0, {}),
+        MemoryDep('primals_5', c0, {c0: 47}),
+        MemoryDep('tangents_1', 0, {})]
+op0.outputs = [
+    buf0: ComputedBuffer
+    buf0.layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+    buf0.users = [NodeUser(node=SchedulerNode(name='op1'), can_inplace=True, is_weak=False)]
+]
+op0.group.device = npu:0
+op0.group.iteration = ((47,), 1)
+op0.sizes = ([47], [])
+primals_2_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+primals_4_layout = FixedLayout('npu:0', torch.float32, size=[1], stride=[1])
+tangents_1_layout = FixedLayout('npu:0', torch.float32, size=[], stride=[])
+clamp_min_1_layout = FixedLayout('npu:0', torch.float32, size=[], stride=[])
+primals_5_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+buf0_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+class op0_loop_body:
+    var_ranges = {p0: 47}
+    index0 = p0
+    index1 = 0
+    def body(self, ops):
+        get_index = self.get_index('index0')
+        load = ops.load('primals_2', get_index)
+        get_index_1 = self.get_index('index0')
+        load_1 = ops.load('primals_2', get_index_1)
+        sub = ops.sub(load, load_1)
+        exp = ops.exp(sub)
+        get_index_2 = self.get_index('index1')
+        load_2 = ops.load('primals_4', get_index_2)
+        mul = ops.mul(exp, load_2)
+        get_index_3 = self.get_index('index0')
+        load_3 = ops.load('primals_2', get_index_3)
+        get_index_4 = self.get_index('index0')
+        load_4 = ops.load('primals_2', get_index_4)
+        sub_1 = ops.sub(load_3, load_4)
+        exp_1 = ops.exp(sub_1)
+        constant = ops.constant(0.8, torch.float32)
+        maximum = ops.maximum(exp_1, constant)
+        constant_1 = ops.constant(1.2, torch.float32)
+        minimum = ops.minimum(maximum, constant_1)
+        get_index_5 = self.get_index('index1')
+        load_5 = ops.load('primals_4', get_index_5)
+        mul_1 = ops.mul(minimum, load_5)
+        eq = ops.eq(mul, mul_1)
+        get_index_6 = self.get_index('index1')
+        load_6 = ops.load('tangents_1', get_index_6)
+        get_index_7 = self.get_index('index1')
+        load_7 = ops.load('clamp_min_1', get_index_7)
+        truediv = ops.truediv(load_6, load_7)
+        get_index_8 = self.get_index('index0')
+        load_8 = ops.load('primals_5', get_index_8)
+        mul_2 = ops.mul(truediv, load_8)
+        neg = ops.neg(mul_2)
+        constant_2 = ops.constant(0.5, torch.float32)
+        mul_3 = ops.mul(neg, constant_2)
+        get_index_9 = self.get_index('index1')
+        load_9 = ops.load('tangents_1', get_index_9)
+        get_index_10 = self.get_index('index1')
+        load_10 = ops.load('clamp_min_1', get_index_10)
+        truediv_1 = ops.truediv(load_9, load_10)
+        get_index_11 = self.get_index('index0')
+        load_11 = ops.load('primals_5', get_index_11)
+        mul_4 = ops.mul(truediv_1, load_11)
+        neg_1 = ops.neg(mul_4)
+        where = ops.where(eq, mul_3, neg_1)
+        get_index_12 = self.get_index('index0')
+        store = ops.store('buf0', get_index_12, where, None)
+        return store
+op0_op1.snodes[1] =
+op1: SchedulerNode(ComputedBuffer)
+op1.writes = [MemoryDep('buf1', c0, {c0: 47})]
+op1.unmet_dependencies = [MemoryDep('buf0', c0, {c0: 47})]
+op1.met_dependencies = 
+    [   MemoryDep('clamp_min_1', 0, {}),
+        MemoryDep('primals_2', c0, {c0: 47}),
+        MemoryDep('primals_3', c0, {c0: 47}),
+        MemoryDep('primals_4', 0, {}),
+        MemoryDep('primals_5', c0, {c0: 47}),
+        MemoryDep('tangents_1', 0, {}),
+        MemoryDep('tangents_2', 0, {})]
+op1.outputs = [
+    buf1: ComputedBuffer
+    buf1.layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+    buf1.users = [NodeUser(node=OUTPUT, can_inplace=False, is_weak=False)]
+]
+op1.group.device = npu:0
+op1.group.iteration = ((47,), 1)
+op1.sizes = ([47], [])
+tangents_2_layout = FixedLayout('npu:0', torch.float32, size=[], stride=[])
+clamp_min_1_layout = FixedLayout('npu:0', torch.float32, size=[], stride=[])
+primals_5_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+tangents_1_layout = FixedLayout('npu:0', torch.float32, size=[], stride=[])
+primals_3_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+primals_2_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+primals_4_layout = FixedLayout('npu:0', torch.float32, size=[1], stride=[1])
+buf0_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+buf1_layout = FixedLayout('npu:0', torch.float32, size=[1, 47], stride=[47, 1])
+class op1_loop_body:
+    var_ranges = {p0: 47}
+    index0 = 0
+    index1 = p0
+    def body(self, ops):
+        get_index = self.get_index('index0')
+        load = ops.load('tangents_2', get_index)
+        get_index_1 = self.get_index('index0')
+        load_1 = ops.load('clamp_min_1', get_index_1)
+        truediv = ops.truediv(load, load_1)
+        get_index_2 = self.get_index('index1')
+        load_2 = ops.load('primals_5', get_index_2)
+        mul = ops.mul(truediv, load_2)
+        get_index_3 = self.get_index('index0')
+        load_3 = ops.load('tangents_1', get_index_3)
+        get_index_4 = self.get_index('index0')
+        load_4 = ops.load('clamp_min_1', get_index_4)
+        truediv_1 = ops.truediv(load_3, load_4)
+        get_index_5 = self.get_index('index1')
+        load_5 = ops.load('primals_5', get_index_5)
+        mul_1 = ops.mul(truediv_1, load_5)
+        constant = ops.constant(0.04, torch.float32)
+        mul_2 = ops.mul(mul_1, constant)
+        add = ops.add(mul, mul_2)
+        neg = ops.neg(add)
+        neg_1 = ops.neg(neg)
+        get_index_6 = self.get_index('index0')
+        load_6 = ops.load('tangents_2', get_index_6)
+        get_index_7 = self.get_index('index0')
+        load_7 = ops.load('clamp_min_1', get_index_7)
+        truediv_2 = ops.truediv(load_6, load_7)
+        get_index_8 = self.get_index('index1')
+        load_8 = ops.load('primals_5', get_index_8)
+        mul_3 = ops.mul(truediv_2, load_8)
+        get_index_9 = self.get_index('index0')
+        load_9 = ops.load('tangents_1', get_index_9)
+        get_index_10 = self.get_index('index0')
+        load_10 = ops.load('clamp_min_1', get_index_10)
+        truediv_3 = ops.truediv(load_9, load_10)
+        get_index_11 = self.get_index('index1')
+        load_11 = ops.load('primals_5', get_index_11)
+        mul_4 = ops.mul(truediv_3, load_11)
+        constant_1 = ops.constant(0.04, torch.float32)
+        mul_5 = ops.mul(mul_4, constant_1)
+        add_1 = ops.add(mul_3, mul_5)
+        get_index_12 = self.get_index('index1')
+        load_12 = ops.load('primals_3', get_index_12)
+        get_index_13 = self.get_index('index1')
+        load_13 = ops.load('primals_2', get_index_13)
+        sub = ops.sub(load_12, load_13)
+        exp = ops.exp(sub)
+        mul_6 = ops.mul(add_1, exp)
+        neg_2 = ops.neg(mul_6)
+        add_2 = ops.add(neg_1, neg_2)
+        get_index_14 = self.get_index('index1')
+        load_14 = ops.load('primals_2', get_index_14)
+        get_index_15 = self.get_index('index1')
+        load_15 = ops.load('primals_2', get_index_15)
+        sub_1 = ops.sub(load_14, load_15)
+        exp_1 = ops.exp(sub_1)
+        get_index_16 = self.get_index('index0')
+        load_16 = ops.load('primals_4', get_index_16)
+        mul_7 = ops.mul(exp_1, load_16)
+        get_index_17 = self.get_index('index1')
+        load_17 = ops.load('primals_2', get_index_17)
+        get_index_18 = self.get_index('index1')
+        load_18 = ops.load('primals_2', get_index_18)
+        sub_2 = ops.sub(load_17, load_18)
+        exp_2 = ops.exp(sub_2)
+        constant_2 = ops.constant(0.8, torch.float32)
+        maximum = ops.maximum(exp_2, constant_2)
+        constant_3 = ops.constant(1.2, torch.float32)
+        minimum = ops.minimum(maximum, constant_3)
+        get_index_19 = self.get_index('index0')
+        load_19 = ops.load('primals_4', get_index_19)
+        mul_8 = ops.mul(minimum, load_19)
+        gt = ops.gt(mul_7, mul_8)
+        get_index_20 = self.get_index('index1')
+        load_20 = ops.load('buf0', get_index_20)
+        constant_4 = ops.constant(0.0, torch.float32)
+        where = ops.where(gt, constant_4, load_20)
+        get_index_21 = self.get_index('index0')
+        load_21 = ops.load('primals_4', get_index_21)
+        mul_9 = ops.mul(where, load_21)
+        get_index_22 = self.get_index('index1')
+        load_22 = ops.load('primals_2', get_index_22)
+        get_index_23 = self.get_index('index1')
+        load_23 = ops.load('primals_2', get_index_23)
+        sub_3 = ops.sub(load_22, load_23)
+        exp_3 = ops.exp(sub_3)
+        constant_5 = ops.constant(0.8, torch.float32)
+        ge = ops.ge(exp_3, constant_5)
+        get_index_24 = self.get_index('index1')
+        load_24 = ops.load('primals_2', get_index_24)
+        get_index_25 = self.get_index('index1')
+        load_25 = ops.load('primals_2', get_index_25)
+        sub_4 = ops.sub(load_24, load_25)
+        exp_4 = ops.exp(sub_4)
+        constant_6 = ops.constant(1.2, torch.float32)
+        le = ops.le(exp_4, constant_6)
+        logical_and = ops.logical_and(ge, le)
+        get_index_26 = self.get_index('index1')
+        load_26 = ops.load('primals_2', get_index_26)
+        get_index_27 = self.get_index('index1')
+        load_27 = ops.load('primals_2', get_index_27)
+        sub_5 = ops.sub(load_26, load_27)
+        exp_5 = ops.exp(sub_5)
+        get_index_28 = self.get_index('index0')
+        load_28 = ops.load('primals_4', get_index_28)
+        mul_10 = ops.mul(exp_5, load_28)
+        get_index_29 = self.get_index('index1')
+        load_29 = ops.load('primals_2', get_index_29)
+        get_index_30 = self.get_index('index1')
+        load_30 = ops.load('primals_2', get_index_30)
+        sub_6 = ops.sub(load_29, load_30)
+        exp_6 = ops.exp(sub_6)
+        constant_7 = ops.constant(0.8, torch.float32)
+        maximum_1 = ops.maximum(exp_6, constant_7)
+        constant_8 = ops.constant(1.2, torch.float32)
+        minimum_1 = ops.minimum(maximum_1, constant_8)
+        get_index_31 = self.get_index('index0')
+        load_31 = ops.load('primals_4', get_index_31)
+        mul_11 = ops.mul(minimum_1, load_31)
+        lt = ops.lt(mul_10, mul_11)
+        get_index_32 = self.get_index('index1')
+        load_32 = ops.load('buf0', get_index_32)
+        constant_9 = ops.constant(0.0, torch.float32)
+        where_1 = ops.where(lt, constant_9, load_32)
+        get_index_33 = self.get_index('index0')
+        load_33 = ops.load('primals_4', get_index_33)
+        mul_12 = ops.mul(where_1, load_33)
+        constant_10 = ops.constant(0.0, torch.float32)
+        where_2 = ops.where(logical_and, mul_12, constant_10)
+        add_3 = ops.add(mul_9, where_2)
+        get_index_34 = self.get_index('index1')
+        load_34 = ops.load('primals_2', get_index_34)
+        get_index_35 = self.get_index('index1')
+        load_35 = ops.load('primals_2', get_index_35)
+        sub_7 = ops.sub(load_34, load_35)
+        exp_7 = ops.exp(sub_7)
+        mul_13 = ops.mul(add_3, exp_7)
+        add_4 = ops.add(add_2, mul_13)
+        get_index_36 = self.get_index('index1')
+        store = ops.store('buf1', get_index_36, add_4, None)
+        return store
+
+
